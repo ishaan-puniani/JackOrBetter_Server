@@ -1,1 +1,1 @@
-# JackOrBetter_Server [ ![Codeship Status for ishaan-puniani/Slot_Server](https://codeship.com/projects/794088b0-c824-0133-6a7a-4ac43df0202f/status?branch=master)](https://codeship.com/projects/139224)
+# JackOrBetter_Server [ ![Codeship Status for ishaan-puniani/JackOrBetter_Server](https://codeship.com/projects/0b691070-16d9-0134-1384-3e8c5d75eee7/status?branch=master)](https://codeship.com/projects/158452)
