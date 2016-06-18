@@ -2,8 +2,9 @@
 var MersenneTwister = require('mersenne-twister');
 // MersenneTwister uses Date().getTime() as a default seed - good enough
 var generator = new MersenneTwister();
-
+var winEvaluator = require('../../component/winEvaluator');
 var deck = require('../../config/deck');
+var paytable = require('../../component/paytable');
 
 function draw(game) {
     console.log("JackOrBetter : draw ")
@@ -18,6 +19,7 @@ function draw(game) {
         }
         selectedCards.push(cardValue);
     }
+
     if (!error) {
         var cards = deck.cards;
         for (var i = 1; selectedCards.length < 5; ) {
@@ -32,13 +34,22 @@ function draw(game) {
                 i++;
             }
         }
+        var winType = winEvaluator.evaluate(selectedCards);
+        var payForWin = paytable[winType];
+        var win = 0;
+        if (payForWin) {
+            win = game.bet * payForWin[game.betLevel]
+        }
+        //   console.log(payForWin );
     }
+
     return {
         roundOver: true,
         bet: game.bet,
-        win: 10,
+        win: win,
         cards: pickedCards,
         nextAction: "deal",
+        winType: winType,
         error: error
     }
 }
