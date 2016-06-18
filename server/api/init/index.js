@@ -4,9 +4,10 @@ var deck = require('../../config/deck');
 
 function init() {
     return {
-        cards: deck.card,
+        cards: deck.cards,
         win:0,
-        roundOver:true
+        roundOver:true,
+        nextAction:"deal"
     }
 }
 
