@@ -8,6 +8,7 @@ var paytable = require('../../component/paytable');
 
 function draw(game) {
     console.log("JackOrBetter : draw ")
+    //game.holdedCards = {'1': '8_D', '2': '12_C', '3': '14_D', '4': '14_C', '5': '2_S'}
     var selectedCards = [], error;
     var pickedCards = game.holdedCards || {};
 
@@ -35,12 +36,14 @@ function draw(game) {
             }
         }
         var winType = winEvaluator.evaluate(selectedCards);
+        var sortedCards = winEvaluator.getSortedHand();
         var payForWin = paytable[winType];
         var win = 0;
         if (payForWin) {
+             console.log("game.bet",game.bet,"game.betLevel",game.betLevel );
             win = game.bet * payForWin[game.betLevel]
         }
-        //   console.log(payForWin );
+           console.log("win",win );
     }
 
     return {
@@ -50,6 +53,7 @@ function draw(game) {
         cards: pickedCards,
         nextAction: "deal",
         winType: winType,
+        winningCards: sortedCards,
         error: error
     }
 }
