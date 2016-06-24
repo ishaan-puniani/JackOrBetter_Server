@@ -40,8 +40,8 @@ function draw(game) {
         var payForWin = paytable[winType];
         var win = 0;
         if (payForWin) {
-             console.log("game.bet",game.bet,"game.betLevel",game.betLevel );
-            win = game.bet * payForWin[game.betLevel]
+             console.log("game.bet",game.bet,"game.betLevel",game.betLevel,"betLevelIdx",game.betLevelIdx ,"payForWin[game.betLevelIdx]",payForWin[game.betLevelIdx]);
+            win = game.bet * payForWin[game.betLevelIdx]
         }
            console.log("win",win );
     }
