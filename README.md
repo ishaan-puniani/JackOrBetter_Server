@@ -1,1 +1,2 @@
 # JackOrBetter_Server [ ![Codeship Status for ishaan-puniani/JackOrBetter_Server](https://codeship.com/projects/0b691070-16d9-0134-1384-3e8c5d75eee7/status?branch=master)](https://codeship.com/projects/158452)
+[![Coverage Status](https://coveralls.io/repos/github/ishaan-puniani/JackOrBetter_Server/badge.svg?branch=master)](https://coveralls.io/github/ishaan-puniani/JackOrBetter_Server?branch=master)
